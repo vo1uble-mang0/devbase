@@ -1,0 +1,31 @@
+<header class="header">
+
+    <div class="container">
+
+        <div class="row justify-content-center ">
+
+            <div class="col-md-8">
+            <div class="main_gray">
+
+
+                <a href="{% url 'mainpage' %}"><img class="logo_left_main" src="/media/logo.jpg"
+                                                    alt="vo1uble.mang0"></a>
+
+
+                <a class="btn btn-primary btn-sm btn_header_main " href="{% url 'add_post' %}" role="button">Добавить статью
+                </a>
+
+                <a class="btn btn-secondary btn-sm btn_header_main " href="{% url 'logout' %}" role="button">Привет, {{ user.username }} (выйти)</a>
+
+
+
+            </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</header>

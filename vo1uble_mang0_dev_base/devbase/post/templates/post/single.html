@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+
+{% block content %}
+{% autoescape on %}
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="main_gray">
+                    <div class="card-body">
+
+                        {% if post.photo %}
+                        <div class="single_post_photo"><img src="{{ post.photo.url }}" alt="" width="500"
+                                                            ></div>
+                        {% else %}
+                        <img src="https://picsum.photos/id/1060/350/300/?blur=2" alt="" class="float-left mr-3">
+                        {% endif %}
+
+                        <div class="single_post_title"><h3 class="card-title" >{{ post.title }}</h3></div>
+                        <div class="single_post_text">
+                            <p class="card-text">{{ post.content|safe|linebreaks }}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        <b>Теги:</b>
+                        {% for tag in post.tags.all %}
+                        {{ tag.title }}
+                        {% endfor %}
+                        <br>
+                        {{ post.created_at|date:"Y-m-d" }}
+
+                        posted by <b>{{ post.author }}</b>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endautoescape %}
+{% endblock %}

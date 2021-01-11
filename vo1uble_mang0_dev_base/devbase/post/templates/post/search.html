@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Поиск :: {{ block.super }}{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% for post in posts %}
+
+            <!--            <div class="main_gray">-->
+            <div>
+                <div class="card">
+                    <div class="row g-0 main_gray">
+                        <div class="col-md-4 ">
+                            <div class="search_photo">
+                                {% if post.photo %}
+                                <img src="{{ post.photo.url }}" class="search_photo" width="220px" alt="">
+                                {% else %}
+                                <img src="https://picsum.photos/id/1060/350/235/?blur=2" width="220px" alt="">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-8 ">
+                            <div class="card-body">
+                                <div class="card-header text-center"><h4>
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4></div>
+                                <div class="search_post_content">{{ post.content|truncatewords_html:50|safe }}</div>
+                                <div class="card-footer text-muted " padding="30px">
+                                    <b>Теги:</b>
+                                    {% for tag in post.tags.all %}
+                                    {{ tag.title }}
+                                    {% endfor %}
+                                    <br>
+                                    {{ post.created_at|date:"d-m-Y" }}
+                                    автор: <b>{{ post.author }}</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <!--                </div>-->
+            </div>
+            {% empty %}
+            <div class="search_empty">
+                <p>По вашему запросу ничего не найдено... </p>
+            </div>
+            {% endfor %}
+
+            {% if page_obj.has_other_pages %}
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?{{Рекурсия}}{{Словари}}{{Кортежи}}{{Массивы}}{{Строки}}{{Числа}}{{Пример}}{{Описание}}{{Задача}}{{Senior}}{{SQL}}{{Python}}{{Middle}}{{Junior}}{{HTML}}{{Django}}{{DataScience}}{{CSS}}{{Bootstrap}}{{ s1 }}{{ s2 }}page={{ page_obj.previous_page_number }}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% for p in page_obj.paginator.page_range %}
+
+
+                    {% if page_obj.number == p %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link"
+                           href="?{{Рекурсия}}{{Словари}}{{Кортежи}}{{Массивы}}{{Строки}}{{Числа}}{{Пример}}{{Описание}}{{Задача}}{{Senior}}{{SQL}}{{Python}}{{Middle}}{{Junior}}{{HTML}}{{Django}}{{DataScience}}{{CSS}}{{Bootstrap}}{{ s1 }}{{ s2 }}page={{ p }}">{{ p }} </a>
+                    </li>
+                    {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?{{Рекурсия}}{{Словари}}{{Кортежи}}{{Массивы}}{{Строки}}{{Числа}}{{Пример}}{{Описание}}{{Задача}}{{Senior}}{{SQL}}{{Python}}{{Middle}}{{Junior}}{{HTML}}{{Django}}{{DataScience}}{{CSS}}{{Bootstrap}}{{ s1 }}{{ s2 }}page={{ p }}">{{ p }}</a>
+                        <!--                    <a class="page-link" href="?{{ s1 }}{{ s2 }}page={{ p }}">{{ p }}</a>-->
+                    </li>
+                    {% endif %}
+
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?{{Рекурсия}}{{Словари}}{{Кортежи}}{{Массивы}}{{Строки}}{{Числа}}{{Пример}}{{Описание}}{{Задача}}{{Senior}}{{SQL}}{{Python}}{{Middle}}{{Junior}}{{HTML}}{{Django}}{{DataScience}}{{CSS}}{{Bootstrap}}{{ s1 }}{{ s2 }}page={{ page_obj.next_page_number }}">Next</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

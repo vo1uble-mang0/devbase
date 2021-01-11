@@ -1,0 +1,100 @@
+body{
+    background-color: #fefefe;
+
+}
+
+
+
+.errorlist{
+    color: red;
+}
+
+.logo{
+    width:250px; float:left; margin:10px;
+}
+
+.main_gray{
+    background-color: #f2f2f2e6;
+    border:0px solid #9dc5f0;
+    overflow:hidden;
+    margin:10px;
+    padding:10px;
+}
+
+.header h4{
+    float:right; padding:10px 20px;
+}
+
+.search_post_photo{
+width:200px;
+float:left; margin:10px;
+overflow:hidden;
+
+}
+
+.search_post_content {
+  padding:10px;
+}
+
+.single_post_text{
+padding:10px;
+}
+
+.single_post_photo{
+text-align:center;
+display:block;
+margin:10px;
+
+
+}
+
+.single_post_title{
+text-align:center;
+}
+
+.search_checkbox{
+border:3px solid #fefefe;
+background-color: #e8e8e8e6;
+margin:3px; width:150px; height:35px; text-align:left; padding:3px;
+}
+
+
+.pagination .nav-links .page-numbers {
+    border: 1px solid #448aff;
+    border-radius: 50%;
+    color: #448aff;
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    height: 45px;
+    line-height: 45px;
+    list-style: outside none none;
+
+    text-align: center;
+    width: 45px;
+
+}
+
+.search_empty{
+    background-color: #f59a9a48;
+    border:0px solid #9dc5f0;
+    overflow:hidden;
+    margin:10px;
+    padding:10px;
+}
+
+.header_menu{
+    overflow:hidden;
+    float:right;
+    padding:20px;
+}
+
+.login_button{
+
+    margin:10px 0px;
+}
+
+.alert{
+    margin:10px;
+}

@@ -1,0 +1,53 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="main_gray">
+                    <h2 class="sidebar-title">Поиск по ключевым словам и тегам</h2>
+                    <p></p>
+                    <form action="{% url 'search' %}" method="get">
+                        <p><input type="text" autocomplete="off" class="form-control" id="s1" name="s1" placeholder="Ключевые слова 1 ..." size="30"></p>
+                        <p><input type="text" autocomplete="off" class="form-control" id="s2" name="s2" placeholder="И ключевые слова 2 ..." size="30"></p>
+                        <h4> Область: </h4>
+                        <label class="search_checkbox"><input type="checkbox" id="Python" name="Python"> Python </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Django" name="Django"> Django </label>
+                        <label class="search_checkbox"><input type="checkbox" id="HTML" name="HTML"> HTML </label>
+                        <label class="search_checkbox"><input type="checkbox" id="CSS" name="CSS"> CSS </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Bootstrap" name="Bootstrap"> Bootstrap </label>
+                        <label class="search_checkbox"><input type="checkbox" id="DataScience" name="DataScience"> DataScience </label>
+                        <label class="search_checkbox"><input type="checkbox" id="SQL" name="SQL"> SQL </label>
+
+
+                        <h4> Сложность: </h4>
+                        <label class="search_checkbox"><input type="checkbox" id="Junior" name="Junior"> Junior</label>
+                        <label class="search_checkbox"><input type="checkbox" id="Middle" name="Middle"> Middle</label>
+                        <label class="search_checkbox"><input type="checkbox" id="Senior" name="Senior"> Senior</label>
+                        <p></p>
+                        <h4> Тип: </h4>
+                        <label class="search_checkbox"><input type="checkbox" id="Описание" name="Описание"> Описание </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Пример" name="Пример" > Пример </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Задача" name="Задача"> Задача </label>
+                        <p></p>
+                        <h4> Kata Tags:</h4>
+                        <label class="search_checkbox"><input type="checkbox" id="Числа" name="Числа"> Числа</label>
+                        <label class="search_checkbox"><input type="checkbox" id="Строки" name="Строки"> Строки </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Массивы" name="Массивы"> Массивы </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Списки" name="Списки"> Списки </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Кортежи" name="Кортежи"> Кортежи </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Словари" name="Словари"> Словари </label>
+                        <label class="search_checkbox"><input type="checkbox" id="Рекурсия" name="Рекурсия"> Рекурсия </label>
+                        <p></p>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary"> Поиск </button>
+                        </div>
+
+
+                        <p></p>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</footer>

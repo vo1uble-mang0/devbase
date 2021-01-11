@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+        <div class="logo_center">
+        <a href="{% url 'home' %}"><img width="200px"  src="/media/logo.jpg" alt="vo1uble.mang0"></a>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="main_gray">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Логин</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="main_gray">
+
+                <p>Нет данных для входа?</p>
+                <div class="d-grid gap-2">
+
+                    <a class="btn btn-secondary btn-sm " href="{% url 'register' %}" role="button">Зарегистироваться</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
